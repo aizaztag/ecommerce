@@ -6,6 +6,9 @@
             <h1><i class="fa fa-shopping-bag"></i> {{ $pageTitle }} - {{ $subTitle }}</h1>
         </div>
     </div>
+    @if($errors->any())
+        {{ implode('', $errors->all(':message')) }}
+    @endif
     @include('admin.partials.flash')
     <div class="row user">
         <div class="col-md-3">

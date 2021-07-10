@@ -27,7 +27,8 @@ class StoreProductFormRequest extends FormRequest
             'name'      =>  'required|max:255',
             'sku'       =>  'required',
             'brand_id'  =>  'required|not_in:0',
-            'price'     =>  'required|regex:/^\d+(\.\d{1,2})?$/',
+            //'price'     =>  'required|regex:/^\d+(\.\d{1,2})?$/',
+            'price'     =>  'required',
             'special_price'     =>  'regex:/^\d+(\.\d{1,2})?$/',
             'quantity'  =>  'required|numeric',
         ];

@@ -13,9 +13,10 @@ class CreateAttributeValuesTable extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('attribute_values');
         Schema::create('attribute_values', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedInteger('attribute_id');
+            $table->unsignedBigInteger('attribute_id');
             $table->foreign('attribute_id')->references('id')->on('attributes');
             $table->text('value');
             $table->decimal('price', 2)->nullable();
